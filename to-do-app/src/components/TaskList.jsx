@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import TaskFilter from "./TaskFilter";
-import "../App.css";
+// import "../App.css";
+import './TaskList.css'; // Make sure this path points to the actual file
+
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
