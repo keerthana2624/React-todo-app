@@ -8,9 +8,17 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
   
+  header {
+    display: flex;
+    justify-content: center; /* Center the title horizontally */
+    align-items: center; /* Center the title vertically */
+    margin-bottom: 20px;
+  }
+  
   h2 {
-    text-align: center;
+    font-size: 2rem;
     color: #333;
+    text-align: center; /* Ensure the text is centered within the header */
   }
   
   /* Styles for individual task items */
