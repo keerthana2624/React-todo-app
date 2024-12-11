@@ -17,9 +17,6 @@ const App = () => {
 
             {/* Route for the task list */}
             <Route path="/task-list" element={<TaskList />} />
-
-         
-            {/* Redirect to task list */}
             <Route path="/" element={<Navigate to="/task-list" />} />
           </Routes>
         </main>
