@@ -15,7 +15,9 @@ const App = () => {
             {/* Route for the task list */}
             <Route path="/task-list" element={<TaskList />} />
 
-            
+            {/* Route for adding a new task */}
+            <Route path="/add-task" element={<AddTask />} />
+
             {/* Redirect to task list */}
             <Route path="/" element={<Navigate to="/task-list" />} />
           </Routes>
