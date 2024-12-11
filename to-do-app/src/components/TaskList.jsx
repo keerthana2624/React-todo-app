@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./TaskList.css";
 
 const TaskList = () => {
+  console.log("-------");
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
