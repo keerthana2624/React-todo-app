@@ -1,58 +1,95 @@
+/* Container for the add task form */
 .add-task-container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Center and style the title */
+.add-task-container h2 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form group container */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Label styling */
+.form-group label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Input and textarea styling */
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box; /* Prevent input overflow */
+}
+
+/* Textarea specific styling */
+.form-group textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+/* Button styling */
+.add-task-button {
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Button hover effect */
+.add-task-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05); /* Slight scaling for hover effect */
+}
+
+/* Button active effect */
+.add-task-button:active {
+  background-color: #3e8e41;
+  transform: scale(1); /* Reset scale on click */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
+  .add-task-container {
+    padding: 15px;
   }
-  
-  h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+
+  .add-task-container h2 {
+    font-size: 1.5em;
   }
-  
-  form {
-    display: flex;
-    flex-direction: column;
+
+  .add-task-button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
   }
-  
-  .input-group {
-    margin-bottom: 15px;
-  }
-  
-  .input-group label {
-    font-size: 1rem;
-    color: #333;
-  }
-  
-  .input-group input,
-  .input-group textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-    width: 100%;
-  }
-  
-  .input-group textarea {
-    resize: vertical;
-    height: 100px;
-  }
-  
-  button {
-    padding: 10px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
+}
