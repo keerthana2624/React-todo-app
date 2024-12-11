@@ -18,3 +18,4 @@ const TaskFilter = ({ filter, setFilter }) => {
 };
 
 
+export default TaskFilter;
