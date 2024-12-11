@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TaskFilter from "./TaskFilter";
-import "./App.css";
+import "../App.css";
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
@@ -77,4 +77,4 @@ const TaskList = () => {
 
 export default TaskList;
 
-  // Function to filter tasks based on the selected filter
+  
