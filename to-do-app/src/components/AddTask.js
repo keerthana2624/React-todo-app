@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for redirecting
-
+import { useNavigate } from "react-router-dom"; // Import useNavigate for redirecti
 const AddTask = () => {
   const [title, setTitle] = useState(""); // State for task title
   const [description, setDescription] = useState(""); // State for task description
