@@ -14,8 +14,6 @@ const App = () => {
           <Routes>
             {/* Route for adding a new task */}
             <Route path="/add-task" element={<AddTask />} />
-
-            {/* Route for the task list */}
             <Route path="/task-list" element={<TaskList />} />
             <Route path="/" element={<Navigate to="/task-list" />} />
           </Routes>
