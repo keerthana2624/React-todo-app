@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import "./AddTask.css"; // Ensure you import the updated CSS
 
