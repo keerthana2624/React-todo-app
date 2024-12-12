@@ -1,0 +1,32 @@
+/* Default styling for Dark Mode Toggle button */
+.dark-mode-toggle {
+    padding: 10px 20px;
+    background-color: #007bff; /* Light mode button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 1rem;
+  }
+  
+  .dark-mode-toggle:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Styling for Dark Mode */
+  body.dark-mode .dark-mode-toggle {
+    background-color: #4caf50; /* Green button in dark mode */
+  }
+  
+  body.dark-mode .dark-mode-toggle:hover {
+    background-color: #388e3c; /* Darker green on hover in dark mode */
+  }
+  
+  /* Additional accessibility styles */
+  .dark-mode-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 3px 2px rgba(76, 175, 80, 0.6); /* Green focus outline */
+  }
+  
