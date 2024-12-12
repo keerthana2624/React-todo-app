@@ -153,16 +153,31 @@ button {
 }
 
 
+.status-filter,
+.priority-filter {
+  display: inline-block; /* Ensure both filters are inline */
+  margin: 0;
+  margin-bottom: 15px;
+}
+
 .filters-container {
   display: flex;
-  justify-content: space-between; /* Space between filters */
+  justify-content: space-between; /* Ensures space between the filters */
   align-items: center;
+  width: 100%; /* Full width of the container */
 }
 
 .status-filter {
-  margin-left: auto; /* Push it to the right */
-  text-align: right;
+  text-align: right; /* Align status filter to the right */
+  margin-right: 150px; /* Add space between the filters */
 }
+
+.priority-filter {
+  text-align: left; /* Align priority filter to the left */
+  margin-left: 378px; /* Add space between the filters */
+}
+
+
 
 
 

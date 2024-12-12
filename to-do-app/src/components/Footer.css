@@ -1,0 +1,65 @@
+/* General footer styles */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #77c9d6; /* Light mode background */
+    color: #333; /* Light mode text */
+    border-top: 2px solid #ccc;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    height: 80px; /* Set footer height */
+  }
+  
+  .footer.dark-mode {
+    background-color: #333; /* Dark mode background */
+    color: #f4f4f4; /* Dark mode text */
+  }
+  
+  /* Footer text */
+  .footer p {
+    font-size: 1rem;
+    margin: 0;
+    text-align: center;
+  }
+  
+  /* Footer navigation links */
+  .footer nav {
+    position: absolute;
+    right: 2rem; /* Align to the right */
+  }
+  
+  .footer nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footer nav li {
+    margin-left: 20px; /* Space between links */
+  }
+  
+  .footer nav a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .footer nav a:hover {
+    text-decoration: underline;
+    color: #007bff; /* Blue color on hover */
+  }
+  
+  /* Dark mode styles for footer */
+  .footer.dark-mode nav a {
+    color: #f4f4f4;
+  }
+  
+  .footer.dark-mode nav a:hover {
+    color: #007bff;
+  }
+  
