@@ -1,5 +1,5 @@
 import React from "react";
-// import "./EditTask.css"; // Include any specific styles for the edit form
+import "./EditTask.css"; // Include any specific styles for the edit form
 
 const EditTask = ({ editingTask, setEditingTask, handleSaveTask, handleCancelEdit }) => {
   // Handle form input changes for editing the task
