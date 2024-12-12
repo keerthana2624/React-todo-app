@@ -129,8 +129,8 @@ const TaskList = () => {
   const [tasks, setTasks] = useState([]);
   const [filter, setFilter] = useState("All"); // State for status filter
   const [priorityFilter, setPriorityFilter] = useState("All"); // State for priority filter
-  // const [editingTaskId, setEditingTaskId] = useState(null); // State for tracking the task being edited
-  // const [editingTask, setEditingTask] = useState({ title: "", description: "", priority: "Low" });
+  const [editingTaskId, setEditingTaskId] = useState(null); // State for tracking the task being edited
+  const [editingTask, setEditingTask] = useState({ title: "", description: "", priority: "Low" });
 
   // Load tasks from localStorage on initial render
   useEffect(() => {
@@ -161,6 +161,16 @@ const TaskList = () => {
     setEditingTask({ ...taskToEdit });
   };
 
+   
+   // Function to save the edited task
+   const handleSaveTask = (updatedTask) => {
+    const updatedTasks = tasks.map((task) =>
+      task.id === editingTaskId ? { ...task, ...updatedTask } : task
+    );
+    setTasks(updatedTasks);
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+    setEditingTaskId(null);
+  };
   
 
   // Filter tasks based on selected criteria (status and priority)
