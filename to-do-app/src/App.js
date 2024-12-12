@@ -56,15 +56,18 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate, NavLink } from "react-router-dom";
 import TaskList from "./components/TaskList";
 import AddTask from "./components/AddTask";
-import DarkModeToggle from "./components/DarkModeToggle"; // Import the DarkModeToggle component
 import "./App.css"; // For the navigation styles
+import Header from "./components/Header";
 
 const App = () => {
   return (
+    
     <Router>
+      {/* <Header /> */}
       <div className="app-container">
+      <Header />
         <header>
-          <h1>To-Do List App</h1>
+          {/* <h1>To-Do List App</h1> */}
           {/* Navigation Links */}
           <nav>
             <ul>
@@ -90,8 +93,6 @@ const App = () => {
               </li>
             </ul>
           </nav>
-          {/* Dark Mode Toggle Button */}
-          <DarkModeToggle />
         </header>
         <main>
           <Routes>
