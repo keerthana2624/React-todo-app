@@ -87,20 +87,23 @@ import "./TaskList.css"; // Ensure this path points to the actual file
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
-  const [filter, setFilter] = useState("All"); // State for filter
+  const [filter, setFilter] = useState("All"); // State for status filter
   const [priorityFilter, setPriorityFilter] = useState("All"); // State for priority filter
 
+  // Load tasks from localStorage on initial render
   useEffect(() => {
     const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
     setTasks(savedTasks);
   }, []);
 
+  // Function to delete a task
   const handleDeleteTask = (taskId) => {
     const updatedTasks = tasks.filter((task) => task.id !== taskId);
     setTasks(updatedTasks);
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   };
 
+  // Function to mark a task as complete
   const handleCompleteTask = (taskId) => {
     const updatedTasks = tasks.map((task) =>
       task.id === taskId ? { ...task, completed: true } : task
@@ -124,9 +127,21 @@ const TaskList = () => {
     <div className="task-list-container">
       <h2>Task List</h2>
 
-      {/* Filter Components */}
-      <TaskFilter filter={filter} setFilter={setFilter} />
+      {/* Status Filter */}
+      <div className="status-filter">
+        <label htmlFor="status">Filter by Status: </label>
+        <select
+          id="status"
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+        >
+          <option value="All">All</option>
+          <option value="Completed">Completed</option>
+          <option value="Pending">Pending</option>
+        </select>
+      </div>
 
+      {/* Priority Filter */}
       <div className="priority-filter">
         <label htmlFor="priority">Filter by Priority: </label>
         <select
@@ -147,13 +162,17 @@ const TaskList = () => {
           <div
             key={task.id}
             className={`task-item ${
-              task.completed ? "completed" : task.priority.toLowerCase()
+              task.completed
+                ? "completed"
+                : task.priority
+                ? task.priority.toLowerCase()
+                : "default"
             }`}
           >
             <h3>{task.title}</h3>
             <p>{task.description}</p>
             <p className="due-date">Due: {task.dueDate}</p>
-            <p className="priority">Priority: {task.priority}</p>
+            <p className="priority">Priority: {task.priority || "Low"}</p>
             <div className="task-actions">
               {!task.completed && (
                 <button
@@ -180,4 +199,3 @@ const TaskList = () => {
 };
 
 export default TaskList;
-  
