@@ -35,4 +35,4 @@ const DarkModeToggle = () => {
   );
 };
 
-// export default DarkModeToggle;
+export default DarkModeToggle;
