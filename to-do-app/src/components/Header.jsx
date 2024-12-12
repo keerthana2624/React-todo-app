@@ -1,5 +1,5 @@
 import React from "react";
-// import "./Header.css";
+import "./Header.css";
 import DarkModeToggle from "./DarkModeToggle"; 
 const Header = ({ toggleDarkMode, isDarkMode }) => {
   return (
