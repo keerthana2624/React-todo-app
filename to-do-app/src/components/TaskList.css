@@ -122,3 +122,48 @@ button {
   }
 }
 
+.task-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-item.completed {
+  background-color: #e0ffe0;
+  text-decoration: line-through;
+}
+
+.priority {
+  font-weight: bold;
+}
+
+.priority.high {
+  color: red;
+}
+
+.priority.medium {
+  color: orange;
+}
+
+.priority.low {
+  color: green;
+}
+
+
+.filters-container {
+  display: flex;
+  justify-content: space-between; /* Space between filters */
+  align-items: center;
+}
+
+.status-filter {
+  margin-left: auto; /* Push it to the right */
+  text-align: right;
+}
+
+
+
+

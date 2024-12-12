@@ -1,10 +1,14 @@
+
+
+
 import React, { useState } from "react";
-import "./AddTask.css"; // Ensure you import the updated CSS
+import "./AddTask.css";
 
 const AddTask = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [dueDate, setDueDate] = useState("");
+  const [priority, setPriority] = useState("Medium"); // Default priority
 
   const handleAddTask = (e) => {
     e.preventDefault();
@@ -13,6 +17,7 @@ const AddTask = () => {
       title,
       description,
       dueDate,
+      priority, // Add priority to the task object
       completed: false,
     };
 
@@ -23,6 +28,7 @@ const AddTask = () => {
     setTitle("");
     setDescription("");
     setDueDate("");
+    setPriority("Medium");
     alert("Task added successfully!");
   };
 
@@ -54,6 +60,18 @@ const AddTask = () => {
             value={dueDate}
             onChange={(e) => setDueDate(e.target.value)}
           />
+        </div>
+        <div className="form-group">
+          <label>Priority</label>
+          <select
+            value={priority}
+            onChange={(e) => setPriority(e.target.value)}
+            required
+          >
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
         </div>
         <button type="submit" className="add-task-button">
           Add Task
