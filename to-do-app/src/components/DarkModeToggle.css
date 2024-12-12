@@ -16,6 +16,19 @@
   }
   
   /* Styling for Dark Mode */
+  body.dark-mode {
+    background-color: #121212; /* Dark background for dark mode */
+    color: #e0e0e0; /* Light text color for dark mode */
+  }
+  
+  body.dark-mode .app-container {
+    background-color: #1e1e1e; /* Dark container for dark mode */
+  }
+  
+  body.dark-mode h1 {
+    color: #e0e0e0; /* Light text for heading in dark mode */
+  }
+  
   body.dark-mode .dark-mode-toggle {
     background-color: #4caf50; /* Green button in dark mode */
   }

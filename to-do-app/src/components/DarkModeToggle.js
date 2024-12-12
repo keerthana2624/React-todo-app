@@ -1,5 +1,6 @@
-// DarkModeToggle.js
+
 import React, { useState, useEffect } from 'react';
+import './DarkModeToggle.css'; // Import the CSS for DarkModeToggle
 
 const DarkModeToggle = () => {
   // State to track dark mode status
