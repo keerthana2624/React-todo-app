@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 1rem; /* Further decreased padding */
-    background-color: #f4f4f4; /* Light mode background */
+    background-color: #77c9d6; /* Light mode background */
     color: #333; /* Light mode text */
     border-bottom: 3px solid #ccc; /* Slightly thicker border */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1); /* Bigger shadow for more depth */
@@ -67,7 +67,7 @@
     font-size: 0.9rem; /* Slightly smaller font size */
     font-weight: bold;
     color: #333;
-    background-color: #fff;
+    background-color: #24c7d6;
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
