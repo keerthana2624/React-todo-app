@@ -151,3 +151,19 @@ button {
 .priority.low {
   color: green;
 }
+
+
+.filters-container {
+  display: flex;
+  justify-content: space-between; /* Space between filters */
+  align-items: center;
+}
+
+.status-filter {
+  margin-left: auto; /* Push it to the right */
+  text-align: right;
+}
+
+
+
+
