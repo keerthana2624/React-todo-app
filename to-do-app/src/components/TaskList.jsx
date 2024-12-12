@@ -124,12 +124,14 @@
 
 import React, { useState, useEffect } from "react";
 import "./TaskList.css"; // Ensure this path points to the actual file
-
+import EditTask from "./EditTask";
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
   const [filter, setFilter] = useState("All"); // State for status filter
   const [priorityFilter, setPriorityFilter] = useState("All"); // State for priority filter
-  
+  // const [editingTaskId, setEditingTaskId] = useState(null); // State for tracking the task being edited
+  // const [editingTask, setEditingTask] = useState({ title: "", description: "", priority: "Low" });
+
   // Load tasks from localStorage on initial render
   useEffect(() => {
     const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
