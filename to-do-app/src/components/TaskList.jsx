@@ -162,10 +162,7 @@ const TaskList = () => {
   };
 
 
-  // Function to cancel editing
-  const handleCancelEdit = () => {
-    setEditingTaskId(null);
-  };
+  
 
    
    // Function to save the edited task
@@ -178,6 +175,12 @@ const TaskList = () => {
     setEditingTaskId(null);
   };
   
+
+  // Function to cancel editing
+  const handleCancelEdit = () => {
+    setEditingTaskId(null);
+  };
+
 
   // Filter tasks based on selected criteria (status and priority)
   const filteredTasks = tasks.filter((task) => {
@@ -223,6 +226,15 @@ const TaskList = () => {
         </select>
       </div>
 
+       {/* Editing Task Form */}
+       {editingTaskId && (
+        <EditTask
+          editingTask={editingTask}
+          setEditingTask={setEditingTask}
+          handleSaveTask={handleSaveTask}
+          handleCancelEdit={handleCancelEdit}
+        />
+      )}
       
 
       {/* Task List */}
@@ -251,6 +263,12 @@ const TaskList = () => {
                   Mark as Complete
                 </button>
               )}
+                <button
+                className="edit-button"
+                onClick={() => handleEditTask(task.id)}
+              >
+                Edit
+              </button>
               <button
                 className="delete-button"
                 onClick={() => handleDeleteTask(task.id)}
