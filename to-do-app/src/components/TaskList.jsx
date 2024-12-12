@@ -161,6 +161,12 @@ const TaskList = () => {
     setEditingTask({ ...taskToEdit });
   };
 
+
+  // Function to cancel editing
+  const handleCancelEdit = () => {
+    setEditingTaskId(null);
+  };
+
    
    // Function to save the edited task
    const handleSaveTask = (updatedTask) => {
