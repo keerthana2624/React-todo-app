@@ -1,0 +1,90 @@
+/* General header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem; /* Further decreased padding */
+    background-color: #f4f4f4; /* Light mode background */
+    color: #333; /* Light mode text */
+    border-bottom: 3px solid #ccc; /* Slightly thicker border */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1); /* Bigger shadow for more depth */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    height: 80px; /* Reduced header height */
+  }
+  
+  .header.dark-mode {
+    background-color: #333; /* Dark mode background */
+    color: #f4f4f4; /* Dark mode text */
+  }
+  
+  /* Center title */
+  .header h1 {
+    font-size: 2rem; /* Reduced font size slightly */
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Navigation links (About, Contact Us) */
+  .header nav {
+    position: absolute;
+    right: 0.5rem; /* Reduced right margin */
+  }
+  
+  .header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header nav li {
+    margin-left: 15px; /* Reduced space between links */
+  }
+  
+  .header nav a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.1rem; /* Slightly smaller font size for links */
+    font-weight: bold;
+  }
+  
+  .header nav a:hover {
+    text-decoration: underline;
+    color: #007bff; /* Blue color on hover */
+  }
+  
+  /* Dark mode toggle button */
+  .dark-mode-toggle {
+    position: absolute;
+    left: 1rem; /* Reduced left margin */
+    padding: 0.3rem 0.4rem; /* Further reduced padding for the button */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    font-weight: bold;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .dark-mode-toggle:hover {
+    background-color: #ddd; /* Light mode hover */
+  }
+  
+  .header.dark-mode .dark-mode-toggle {
+    color: #f4f4f4;
+    background-color: #444;
+    border-color: #555;
+  }
+  
+  .header.dark-mode .dark-mode-toggle:hover {
+    background-color: #666; /* Dark mode hover */
+  }
+  
