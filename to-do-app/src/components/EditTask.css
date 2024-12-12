@@ -43,7 +43,7 @@
 
 .task-actions {
   display: flex;
-  gap: 1.5rem; /* Increase the space between buttons */
+  gap: 1.0rem; /* Increase the space between buttons */
   margin-top: 1rem; /* Add more space above the buttons */
 }
 
