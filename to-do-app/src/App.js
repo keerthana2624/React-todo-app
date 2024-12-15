@@ -12,9 +12,7 @@ import ContactUs from "./components/ContactUs";
 
 const App = () => {
   return (
-    
     <Router>
-      {/* <Header /> */}
       <div className="app-container">
       <Header />
         <header>

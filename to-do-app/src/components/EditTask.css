@@ -1,55 +1,68 @@
 .edit-task-container {
-  padding: 1.5rem; /* Increase padding for better spacing */
-  border: 2px solid #d3d3d3; /* Slightly thicker border */
-  background-color: #ffffff; /* Use pure white for clarity */
-  margin: 1.5rem 0; /* Increase margin for separation */
-  border-radius: 12px; /* Smooth the corners more */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
-  max-width: 600px; /* Limit the width to make it look compact */
-  margin-left: auto; /* Center the container */
-  margin-right: auto;
+  position: fixed; /* Fix the position to overlay on the screen */
+  top: 50%; /* Center the form vertically */
+  left: 50%; /* Center the form horizontally */
+  transform: translate(-50%, -50%); /* Fine-tune the centering */
+  padding: 1.5rem;
+  border: 2px solid #d3d3d3;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%; /* Make the width responsive */
+  z-index: 1000; /* Ensure the modal is on top of other content */
+}
+
+.edit-task-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 999; /* Overlay behind the modal */
 }
 
 .form-group {
-  margin-bottom: 1.5rem; /* Add more spacing between fields */
+  margin-bottom: 1.5rem;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 0.8rem; /* Slightly increase margin for better readability */
-  font-weight: bold; /* Make labels bold */
-  font-size: 1rem; /* Increase font size */
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
   width: 100%;
-  padding: 0.8rem; /* Increase padding for a better look */
+  padding: 0.8rem;
   border: 1px solid #ccc;
-  border-radius: 6px; /* Round the edges more */
-  font-size: 1rem; /* Increase font size */
-  background-color: #fdfdfd; /* Slightly lighter background for input fields */
-  transition: all 0.2s ease-in-out; /* Add a transition for focus effects */
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fdfdfd;
+  transition: all 0.2s ease-in-out;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-  border-color: #4caf50; /* Highlight with green on focus */
-  outline: none; /* Remove default outline */
-  box-shadow: 0 0 4px rgba(76, 175, 80, 0.4); /* Add a green glow */
+  border-color: #4caf50;
+  outline: none;
+  box-shadow: 0 0 4px rgba(76, 175, 80, 0.4);
 }
 
 .task-actions {
   display: flex;
-  gap: 1.5rem; /* Increase the space between buttons */
-  margin-top: 1rem; /* Add more space above the buttons */
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 .save-button,
 .cancel-button {
-  padding: 0.5rem 1rem; /* Adjust button padding */
+  padding: 0.5rem 1rem;
   border: none;
   border-radius: 4px;
   font-size: 1rem;
@@ -58,57 +71,19 @@
 }
 
 .save-button {
-  background-color: #4caf50; /* Green color for Save */
-  color: white;
-}
-
-.save-button:hover {
-  background-color: #45a049; /* Darker green on hover */
-}
-
-.cancel-button {
-  background-color: #f44336; /* Red color for Cancel */
-  color: white;
-}
-
-.cancel-button:hover {
-  background-color: #d32f2f; /* Darker red on hover */
-}
-
-.complete-button,
-.edit-button,
-.delete-button {
-  padding: 0.5rem 1rem; /* Adjust button padding */
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.complete-button {
   background-color: #4caf50;
   color: white;
 }
 
-.complete-button:hover {
+.save-button:hover {
   background-color: #45a049;
 }
 
-.edit-button {
-  background-color: #ffc107;
-  color: black;
-}
-
-.edit-button:hover {
-  background-color: #e0a800;
-}
-
-.delete-button {
+.cancel-button {
   background-color: #f44336;
   color: white;
 }
 
-.delete-button:hover {
+.cancel-button:hover {
   background-color: #d32f2f;
 }

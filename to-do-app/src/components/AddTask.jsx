@@ -1,14 +1,13 @@
 
-
-
 import React, { useState } from "react";
 import "./AddTask.css";
-
+import { useNavigate } from "react-router-dom";
 const AddTask = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [dueDate, setDueDate] = useState("");
   const [priority, setPriority] = useState("Medium"); // Default priority
+  const navigate = useNavigate(); // Hook for navigation
 
   const handleAddTask = (e) => {
     e.preventDefault();
@@ -30,6 +29,7 @@ const AddTask = () => {
     setDueDate("");
     setPriority("Medium");
     alert("Task added successfully!");
+    navigate("/task-list");
   };
 
   return (
