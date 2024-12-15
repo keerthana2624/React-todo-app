@@ -47,7 +47,7 @@ const App = () => {
           <Routes>
             <Route path="/add-task" element={<AddTask />} />
             <Route path="/task-list" element={<TaskList />} />
-            <Route path="/" element={<Navigate to="/task-list" />} />
+            <Route path="/" element={<Navigate to="/add-task" />} />
           </Routes>
         </main>
         <Footer /> 
