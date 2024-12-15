@@ -7,6 +7,7 @@ import AddTask from "./components/AddTask";
 import "./App.css"; 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import About from "./components/About";
 
 const App = () => {
   return (
@@ -48,6 +49,8 @@ const App = () => {
             <Route path="/add-task" element={<AddTask />} />
             <Route path="/task-list" element={<TaskList />} />
             <Route path="/" element={<Navigate to="/add-task" />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact-us" element={<div>Contact Us Page</div>} />
           </Routes>
         </main>
         <Footer /> 
