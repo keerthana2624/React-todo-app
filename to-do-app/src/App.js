@@ -7,12 +7,12 @@ import AddTask from "./components/AddTask";
 import "./App.css"; 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import About from "./components/About";
+import ContactUs from "./components/ContactUs";
 
 const App = () => {
   return (
-    
     <Router>
-      {/* <Header /> */}
       <div className="app-container">
       <Header />
         <header>
@@ -47,7 +47,9 @@ const App = () => {
           <Routes>
             <Route path="/add-task" element={<AddTask />} />
             <Route path="/task-list" element={<TaskList />} />
-            <Route path="/" element={<Navigate to="/task-list" />} />
+            <Route path="/" element={<Navigate to="/add-task" />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact-us" element={<ContactUs />} />
           </Routes>
         </main>
         <Footer /> 

@@ -2,13 +2,11 @@ import React from "react";
 import "./EditTask.css"; // Include any specific styles for the edit form
 
 const EditTask = ({ editingTask, setEditingTask, handleSaveTask, handleCancelEdit }) => {
-  // Handle form input changes for editing the task
   const handleChange = (e) => {
     const { name, value } = e.target;
     setEditingTask((prevTask) => ({ ...prevTask, [name]: value }));
   };
 
-  // Submit the edited task
   const handleSubmit = (e) => {
     e.preventDefault();
     handleSaveTask(editingTask);
@@ -25,7 +23,7 @@ const EditTask = ({ editingTask, setEditingTask, handleSaveTask, handleCancelEdi
             type="text"
             id="title"
             name="title"
-            value={editingTask.title}
+            value={editingTask.title || ""}
             onChange={handleChange}
             required
           />
@@ -37,7 +35,7 @@ const EditTask = ({ editingTask, setEditingTask, handleSaveTask, handleCancelEdi
           <textarea
             id="description"
             name="description"
-            value={editingTask.description}
+            value={editingTask.description || ""}
             onChange={handleChange}
             required
           />
@@ -49,13 +47,26 @@ const EditTask = ({ editingTask, setEditingTask, handleSaveTask, handleCancelEdi
           <select
             id="priority"
             name="priority"
-            value={editingTask.priority}
+            value={editingTask.priority || "Medium"}
             onChange={handleChange}
           >
             <option value="Low">Low</option>
             <option value="Medium">Medium</option>
             <option value="High">High</option>
           </select>
+        </div>
+
+        {/* Task Date */}
+        <div className="form-group">
+          <label htmlFor="date">Date:</label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            value={editingTask.date || ""}
+            onChange={handleChange}
+            required
+          />
         </div>
 
         {/* Save and Cancel Buttons */}

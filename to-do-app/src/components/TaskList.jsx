@@ -1,31 +1,25 @@
-
-
-
-
 import React, { useState, useEffect } from "react";
 import "./TaskList.css"; // Ensure this path points to the actual file
 import EditTask from "./EditTask";
+
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
-  const [filter, setFilter] = useState("All"); // State for status filter
-  const [priorityFilter, setPriorityFilter] = useState("All"); // State for priority filter
-  const [editingTaskId, setEditingTaskId] = useState(null); // State for tracking the task being edited
+  const [filter, setFilter] = useState("All");
+  const [priorityFilter, setPriorityFilter] = useState("All");
+  const [editingTaskId, setEditingTaskId] = useState(null);
   const [editingTask, setEditingTask] = useState({ title: "", description: "", priority: "Low" });
 
-  // Load tasks from localStorage on initial render
   useEffect(() => {
     const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
     setTasks(savedTasks);
   }, []);
 
-  // Function to delete a task
   const handleDeleteTask = (taskId) => {
     const updatedTasks = tasks.filter((task) => task.id !== taskId);
     setTasks(updatedTasks);
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   };
 
-  // Function to mark a task as complete
   const handleCompleteTask = (taskId) => {
     const updatedTasks = tasks.map((task) =>
       task.id === taskId ? { ...task, completed: true } : task
@@ -33,20 +27,14 @@ const TaskList = () => {
     setTasks(updatedTasks);
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   };
-   
-  // Function to start editing a task
+
   const handleEditTask = (taskId) => {
     const taskToEdit = tasks.find((task) => task.id === taskId);
     setEditingTaskId(taskId);
     setEditingTask({ ...taskToEdit });
   };
 
-
-  
-
-   
-   // Function to save the edited task
-   const handleSaveTask = (updatedTask) => {
+  const handleSaveTask = (updatedTask) => {
     const updatedTasks = tasks.map((task) =>
       task.id === editingTaskId ? { ...task, ...updatedTask } : task
     );
@@ -54,15 +42,11 @@ const TaskList = () => {
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
     setEditingTaskId(null);
   };
-  
 
-  // Function to cancel editing
   const handleCancelEdit = () => {
     setEditingTaskId(null);
   };
 
-
-  // Filter tasks based on selected criteria (status and priority)
   const filteredTasks = tasks.filter((task) => {
     if (filter !== "All" && (filter === "Completed") !== task.completed) {
       return false;
@@ -106,16 +90,19 @@ const TaskList = () => {
         </select>
       </div>
 
-       {/* Editing Task Form */}
-       {editingTaskId && (
-        <EditTask
-          editingTask={editingTask}
-          setEditingTask={setEditingTask}
-          handleSaveTask={handleSaveTask}
-          handleCancelEdit={handleCancelEdit}
-        />
+      {/* Modal Overlay and Editing Task Form */}
+      {editingTaskId && (
+        <div className="edit-task-overlay">
+          <div className="edit-task-container">
+            <EditTask
+              editingTask={editingTask}
+              setEditingTask={setEditingTask}
+              handleSaveTask={handleSaveTask}
+              handleCancelEdit={handleCancelEdit}
+            />
+          </div>
+        </div>
       )}
-      
 
       {/* Task List */}
       {filteredTasks.length > 0 ? (
@@ -143,7 +130,7 @@ const TaskList = () => {
                   Mark as Complete
                 </button>
               )}
-                <button
+              <button
                 className="edit-button"
                 onClick={() => handleEditTask(task.id)}
               >

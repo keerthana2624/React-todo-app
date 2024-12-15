@@ -33,7 +33,7 @@ nav a {
 /* Centering the title */
 header {
   text-align: center; /* Centers text horizontally */
-  margin: 20px 0; /* Adds some vertical space */
+  /* margin: 20px 0; */
 }
 
 header h1 {
